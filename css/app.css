@@ -1,0 +1,4 @@
+/*编辑、删除按钮*/
+.delete,.edit{cursor: pointer;}
+.delete:hover{color: #cd0000;}
+.edit:hover{color: #0000cd;}

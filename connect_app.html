@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+	<title>Backbone实战--联系人应用</title>
+	<link rel="stylesheet" type="text/css" href="lib/bootStrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-inverse">
+			<div class="navbar-brand">Backbone</div>
+			<p class="navbar-text">联系人应用</p>
+		</nav>
+	</header>
+	<!-- 添加联系人 -->
+	<div class="container" id="addView">
+		<div class="panel clearfix">
+			<button class="btn btn-default" id="btnAdd" data-toggle="modal" data-target="#addModal"><span class="glyphicon glyphicon-user"></span>添加联系人</button>
+			<button class="btn btn-default pull-right" id="btnDel"><span class="glyphicon glyphicon-trash"></span>编辑/删除</button>
+		</div>
+		<!-- 弹出表单 -->
+		<div class="container modal fade" id="addModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">
+							添加联系人信息
+						</h4>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="form-group">
+								<label for="username">联系人姓名</label>
+								<input type="text" id="username" name="username" class="form-control">
+							</div>
+							<div class="form-group">
+								<label for="tel">电话</label>
+								<input type="tel" id="tel" name="tel" class="form-control">
+							</div>
+							<div class="form-group">
+								<label for="age">年龄</label>
+								<input type="number" id="age" name="age" class="form-control">
+							</div>
+							<div class="form-group">
+								<label for="job">职业</label>
+								<input type="text" id="job" name="job" class="form-control">
+							</div>
+							<input type="button" class="btn btn-block btn-primary" id="addSmt" value="添加">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 弹出表单end -->
+	</div>
+	<!-- 添加联系人end -->
+	<!-- 联系人列表 -->
+	<div class="container" id="listView">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				联系人列表
+			</div>
+			<div class="panel-body">
+				<ul class="list-group" id="listWrap">
+					<li class="list-group-item clearfix">
+						<span class="delete glyphicon glyphicon-remove pull-right hidden"></span>
+						<h4>姓名:熊熊<small>年龄:22</small></h4>
+						<p>电话:1263456</p>
+						<p>工作:页面仔</p>
+						<span class="edit glyphicon glyphicon-edit pull-right hidden"></span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 联系人列表end -->
+	<!-- 弹出删除警告 -->
+	<div class="modal fade container" id="deleteModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body clearfix">
+					<div class="alert alert-warning">
+						<p>您正在执行删除操作,点击删除后，数据将不可恢复</p>
+						<p class="text-danger" id="deleteName">删除联系人:Xiong</p>
+					</div>
+					<div class="pull-right">
+						<button class="btn btn-danger" id="deleteBtn">删除</button>
+						<button class="btn btn-default" id="cancelBtn">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 删除警告end -->
+	<!-- 编辑框 -->
+	<div class="modal fade container" id="editModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4>编辑内容</h4>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="form-group">
+							<label for="e_user">姓名:</label>
+							<input type="text" id="e_user" name="e_user" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="e_phone">电话:</label>
+							<input type="text" id="e_phone" name="e_phone" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="e_age">年龄</label>
+							<input type="number" id="e_age" name="e_age" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="e_job">职业</label>
+							<input type="e_job" id="e_job" name="e_job" class="form-control">
+						</div>
+						<div class="form-group">
+							<input type="button" id="e_smt" name="e_smt" value="提交" class="btn btn-block btn-primary">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 编辑框end -->
+	<script type="text/javascript" src="lib/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="lib/bootStrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="lib/underscore-min.js"></script>
+	<script type="text/javascript" src="lib/backbone-min.js"></script>
+	<script type="text/javascript" src="js/connect_app.js"></script>
+</body>
+</html>
